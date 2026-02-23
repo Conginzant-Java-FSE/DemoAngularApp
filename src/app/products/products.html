@@ -1,0 +1,34 @@
+<p *ngIf="isLoggedIn">Welcome to our app</p>
+
+@if (isLoggedIn){
+    <p>Hello all</p>
+}
+
+
+<ul >
+    <li *ngFor="let p of products" [ngStyle]="{color: textColor}">
+        {{ p }}
+    </li>
+</ul>
+
+<div [ngSwitch]="role" [ngClass]="{active: isActive}">
+    <p *ngSwitchCase="'buyer'">BUYER</p>
+    <p *ngSwitchCase="'seller'">SELLER</p>
+    <p *ngSwitchCase="'admin'">ADMIN</p>
+</div>
+
+
+<p>{{ category | formatmessage }}</p>
+<p>{{ today | date:"fullDate" | uppercase}}</p>
+<p>{{ price | currency: "INR" }}</p>
+
+<p>{{ price | percent }}</p>
+
+<p>{{ products | slice: 1:3 }}</p>
+
+<p> </p>
+
+
+
+
+
