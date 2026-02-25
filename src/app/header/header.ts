@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -8,5 +8,11 @@ import { RouterModule } from '@angular/router';
   styleUrl: './header.css',
 })
 export class Header {
+    @Input() message!:string;
 
+    @Output() notify = new EventEmitter<string>();
+
+    sendData(){
+      this.notify.emit("hello all");
+    }
 }

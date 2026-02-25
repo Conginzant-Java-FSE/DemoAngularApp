@@ -1,6 +1,8 @@
-<app-header></app-header>
+<app-header [message]="info" (notify)="receiveData($event)"></app-header>
 
 <router-outlet />
+<app-observablecomponent></app-observablecomponent>
+
 <app-footer></app-footer>
 
 
